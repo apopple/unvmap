@@ -3,11 +3,11 @@
 ## Introduction and Limitations
 
 This kernel module is a simple hack to remove kernel vmap page table
-entries a specific physical address. It should not be used and was
+entries for a specific physical address. It should not be used and was
 created solely for debug purposes so has several limitations:
 
 * `vmap_area_list` is not exported as a symbol for module use,
-  therefore the use must provide it.
+  therefore the user must provide it.
 * The `vmap_area_lock` is a static symbol. Therefore we don't bother
   with locking. In practice this usually works ok but when it doesn't
   you keep both pieces.
